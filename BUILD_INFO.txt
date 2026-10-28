@@ -1,0 +1,7 @@
+Kriptografi RSA (Multi-Prime RSA) - paket pengumpulan
+ref sumber     : final-submission
+commit         : 7800c1845dcedc8f1d1b9d68224d9cababd5c5ed
+waktu commit   : 2026-10-28T11:57:09Z
+jumlah berkas  : 106 (belum termasuk BUILD_INFO.txt)
+dikecualikan   : __pycache__, *.pyc, .venv (termasuk bench/.venv), .git, benchmark_keys*.json, Laporan_Proyek_Multi-Prime_RSA.md, docs/stitch-reference/, REVIEW.md, FINAL_CHECKLIST.md, results/final/perbandingan_baseline.md, results/ kecuali results/final/
+Verifikasi     : cd kriptografi_rsa && python -m unittest discover tests

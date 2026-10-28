@@ -1,0 +1,55 @@
+=== A. Vektor uji CRT: p = (3, 5, 7), sisa m = (2, 3, 2) ===
+koefisien Garner t = [2, 1] (t2 = p1^-1 mod p2, t3 = (p1*p2)^-1 mod p3)
+  x1 = m1 = 2; P1 = p1 = 3
+  i=2: u = (m2 - x) * t2 mod p2 = (3 - 2) * 2 mod 5 = 2; x = 2 + 2 * 3 = 8
+  i=3: u = (m3 - x) * t3 mod p3 = (2 - 8) * 1 mod 7 = 1; x = 8 + 1 * 15 = 23
+Gauss (jumlah satu-sisa):
+  p=3: N=35, M=N^-1 mod p=2, m*N*M=140
+  p=5: N=21, M=N^-1 mod p=1, m*N*M=63
+  p=7: N=15, M=N^-1 mod p=1, m*N*M=30
+  jumlah = 233; mod n = 23
+pencarian langsung x in [0, 105): [23]
+  [OK] Garner = 23
+  [OK] Gauss = 23
+  [OK] pencarian langsung menemukan tepat satu solusi, yaitu 23
+
+Vektor yang sama lewat dekripsi RSA penuh (n = 105, e = 5):
+  phi = 48, d = 29, d_i = [1, 1, 5], t = [2, 1], C_i (Gauss b) = [70, 21, 15]
+  c = 23^5 mod 105 = 53; sisa c_i = [2, 3, 4]; m_i = [2, 3, 2]
+  [OK] dekripsi standar = 23 (pembanding pow: 23)
+  [OK] dekripsi Garner = 23 (pembanding pow: 23)
+  [OK] dekripsi Gauss (a) = 23 (pembanding pow: 23)
+  [OK] dekripsi Gauss (b) = 23 (pembanding pow: 23)
+  [OK] m_i dari dekripsi = (2, 3, 2)
+
+=== B. Contoh RSA multi-prime penuh: p = (11, 13, 17), e = 7, m = 1234 ===
+n = 11*13*17 = 2431; phi(n) = 10*12*16 = 1920; e = 7 (gcd(e, phi) = 1: True)
+d = e^-1 mod phi = 823; cek e*d mod phi = 1
+d_i = d mod (p_i - 1) = [3, 7, 7] -> dipakai [3, 7, 7]
+koefisien Garner t = [6, 5]; koefisien Gauss (b) C_i = N_i*M_i mod n = [221, 1496, 715]
+enkripsi: c = m^e mod n = 1234^7 mod 2431 = 1195
+c_i = c mod p_i = [7, 12, 5]; m_i = c_i^d_i mod p_i = [2, 12, 10]; (m mod p_i = [2, 12, 10])
+Garner:
+  x1 = m1 = 2; P1 = p1 = 11
+  i=2: u = (m2 - x) * t2 mod p2 = (12 - 2) * 6 mod 13 = 8; x = 2 + 8 * 11 = 90
+  i=3: u = (m3 - x) * t3 mod p3 = (10 - 90) * 5 mod 17 = 8; x = 90 + 8 * 143 = 1234
+Gauss (a):
+  p=11: N=221, M=N^-1 mod p=1, m*N*M=442
+  p=13: N=187, M=N^-1 mod p=8, m*N*M=17952
+  p=17: N=143, M=N^-1 mod p=5, m*N*M=7150
+  jumlah = 25544; mod n = 1234
+  [OK] m_i sama dengan m mod p_i
+  [OK] Garner manual = 1234
+  [OK] Gauss manual = 1234
+  [OK] dekripsi standar dengan kode inti = 1234 (total operasi tercatat: 45)
+  [OK] dekripsi Garner dengan kode inti = 1234 (total operasi tercatat: 60)
+  [OK] dekripsi Gauss (a) dengan kode inti = 1234 (total operasi tercatat: 65)
+  [OK] dekripsi Gauss (b) dengan kode inti = 1234 (total operasi tercatat: 53)
+  [OK] pembanding pow(c, d, n) = 1234
+
+=== C. Kasus p_i | m: n = 105, e = 5, d = 29, m = 21 (3 | 21 dan 7 | 21) ===
+c = 21; c_i = [0, 1, 0]; d_i = [1, 1, 5]; m_i = [0, 1, 0]
+  [OK] m_i = (0, 1, 0) = m mod p_i
+  [OK] Garner, Gauss (a), Gauss (b), dan standar memulihkan 21
+
+SEMUA PEMERIKSAAN LULUS

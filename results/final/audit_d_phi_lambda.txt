@@ -1,0 +1,4 @@
+kunci acak: 800 (bits 64..1024 x k 2..5 x 40); ciphertext: 4000
+d_i identik (phi, lambda, dan d_primes di kunci): 800 dari 800
+c^d_phi mod n == c^d_lambda mod n: 4000 dari 4000
+selisih panjang bit d_phi - d_lambda: min 0, maks 30, d_phi lebih panjang pada 717 dari 800 kunci; negatif pada 0

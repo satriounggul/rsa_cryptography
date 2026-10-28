@@ -1,0 +1,16 @@
+# D2: 55 tes pada ujung branch (4da06d3, git archive); python3.10/3.13 dari uv di direktori sementara di luar repo. Perintah: <python> -m unittest discover -s tests
+== Python 3.10.20
+----------------------------------------------------------------------
+Ran 55 tests in 9.223s
+
+OK
+== Python 3.13.14
+----------------------------------------------------------------------
+Ran 55 tests in 7.237s
+
+OK
+== Python 3.14.4
+----------------------------------------------------------------------
+Ran 55 tests in 6.778s
+
+OK

@@ -1,0 +1,18 @@
+Sampel 30 kunci per konfigurasi; tiap sel = ukuran bit prima terurut -> banyak kunci; rencana = bits//k (+1 untuk sebagian prima)
+bits=512 k=5: n.bit_length()==bits pada 30/30 kunci
+   (102, 102, 103, 103, 104): 16
+   (102, 102, 103, 103, 103): 9
+   (102, 102, 103, 103, 105): 5
+bits=1024 k=3: n.bit_length()==bits pada 30/30 kunci
+   (341, 342, 342): 20
+   (341, 341, 342): 6
+   (341, 342, 343): 4
+bits=2048 k=4: n.bit_length()==bits pada 30/30 kunci
+   (512, 512, 512, 513): 19
+   (512, 512, 512, 514): 8
+   (512, 512, 512, 512): 2
+   (512, 512, 512, 515): 1
+bits=4096 k=5: n.bit_length()==bits pada 30/30 kunci
+   (819, 819, 819, 820, 821): 16
+   (819, 819, 819, 820, 820): 9
+   (819, 819, 819, 820, 822): 5

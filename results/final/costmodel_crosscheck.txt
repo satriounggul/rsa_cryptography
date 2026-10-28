@@ -1,0 +1,3 @@
+Pemeriksaan silang biaya berbobot-bit: 960 perbandingan (32 kunci x 10 ciphertext x 3 metode)
+identik (literal DAN refined, plus plaintext benar): 960 dari 960; berbeda: 0
+Gauss (a): biaya literal inti < model bench pada semua kasus (modinv tidak dihitung inti): True | selisih relatif rata-rata = 5.14%

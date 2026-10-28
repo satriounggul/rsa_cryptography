@@ -1,0 +1,4 @@
+# Python 3.14.4; dijalankan: python3 bench/audit_opcount_regression.py
+Regresi operation_counts: baseline main (e44081f) vs kode baru HEAD (0e19d59)
+kunci: 24 (bits 64..2048 x k 2..5); ciphertext per kunci: 8 (0, 1, n-1, 5 acak); metode: standar, Garner, Gauss jalur lama
+perbandingan: 576; identik (plaintext DAN 6 bidang hitungan): 576 dari 576; berbeda: 0

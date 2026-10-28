@@ -1,0 +1,17 @@
+# Uji 55 tes pada beberapa versi Python. Python dipasang lewat uv di direktori sementara di luar repo; kode = git archive HEAD (46a0fc1); inti identik dengan v1-final.
+# Perintah: <python> -m unittest discover -s tests
+== Python 3.10.20
+----------------------------------------------------------------------
+Ran 55 tests in 9.435s
+
+OK
+== Python 3.13.14
+----------------------------------------------------------------------
+Ran 55 tests in 7.612s
+
+OK
+== Python 3.14.4
+----------------------------------------------------------------------
+Ran 55 tests in 6.981s
+
+OK
